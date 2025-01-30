@@ -881,7 +881,7 @@ public class WsdlProject extends AbstractTestPropertyHolderWsdlModelItem<Project
             // we have password so do encryption
             try {
                 String data = getConfig().xmlText();
-                String encryptionAlgorithm = "des3";
+                String encryptionAlgorithm = "aes256";
                 byte[] encrypted = OpenSSL.encrypt(encryptionAlgorithm, passwordForEncryption.toCharArray(), data.getBytes());
                 ProjectConfig newProjectConfig = ProjectConfig.Factory.newInstance();
                 ProjectConfig soapuiProject = projectDocument.getSoapuiProject();

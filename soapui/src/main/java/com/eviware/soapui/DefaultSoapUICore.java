@@ -452,7 +452,7 @@ public class DefaultSoapUICore implements SoapUICore {
             if (password != null && password.length() > 0) {
                 try {
                     byte[] data = settingsDocument.xmlText().getBytes();
-                    String encryptionAlgorithm = "des3";
+                    String encryptionAlgorithm = "aes256";
                     byte[] encryptedData = OpenSSL.encrypt(encryptionAlgorithm, password.toCharArray(), data);
                     settingsDocument.setSoapuiSettings(null);
                     settingsDocument.getSoapuiSettings().setEncryptedContent(encryptedData);

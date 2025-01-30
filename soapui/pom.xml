@@ -12,7 +12,7 @@
     <parent>
         <groupId>com.smartbear.soapui</groupId>
         <artifactId>soapui-project</artifactId>
-        <version>5.7.3-SNAPSHOT</version>
+        <version>5.8.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>soapui</artifactId>
@@ -82,7 +82,7 @@
                         <!-- run tests with home set to folder test-classes inside target to isolate tests from whatever user is executing the build. -->
                         <user.home>target/test-classes</user.home>
                     </systemProperties>
-                    <argLine>--illegal-access=permit</argLine>
+                    <argLine>--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.desktop/java.awt=ALL-UNNAMED</argLine>
                 </configuration>
             </plugin>
 
@@ -107,8 +107,8 @@
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
-            <version>${mockito-all.version}</version>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito-core.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -249,6 +249,12 @@
             <version>${javafx-base-version}</version>
             <classifier>mac</classifier>
         </dependency>
+                <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>${javafx-base-version}</version>
+            <classifier>mac-aarch64</classifier>
+        </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -267,6 +273,12 @@
             <artifactId>javafx-controls</artifactId>
             <version>${javafx-controls-version}</version>
             <classifier>mac</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx-controls-version}</version>
+            <classifier>mac-aarch64</classifier>
         </dependency>
 
         <dependency>
@@ -287,6 +299,12 @@
             <version>${javafx-graphics-version}</version>
             <classifier>mac</classifier>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>${javafx-graphics-version}</version>
+            <classifier>mac-aarch64</classifier>
+        </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -305,6 +323,12 @@
             <artifactId>javafx-media</artifactId>
             <version>${javafx-media-version}</version>
             <classifier>mac</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-media</artifactId>
+            <version>${javafx-media-version}</version>
+            <classifier>mac-aarch64</classifier>
         </dependency>
 
         <dependency>
@@ -325,6 +349,12 @@
             <version>${javafx-web-version}</version>
             <classifier>mac</classifier>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-web</artifactId>
+            <version>${javafx-web-version}</version>
+            <classifier>mac-aarch64</classifier>
+        </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -343,6 +373,12 @@
             <artifactId>javafx-swing</artifactId>
             <version>${javafx-swing-version}</version>
             <classifier>mac</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-swing</artifactId>
+            <version>${javafx-swing-version}</version>
+            <classifier>mac-aarch64</classifier>
         </dependency>
 
         <!-- Jetty -->
@@ -731,7 +767,7 @@
         <dependency>
             <groupId>com.graphql-java</groupId>
             <artifactId>graphql-java</artifactId>
-            <version>17.3</version>
+            <version>22.3</version>
         </dependency>
         <!-- Plugin Framework-->
         <dependency>

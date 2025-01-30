@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.smartbear.soapui</groupId>
         <artifactId>soapui-project</artifactId>
-        <version>5.7.3-SNAPSHOT</version>
+        <version>5.8.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>soapui-maven-plugin</artifactId>
@@ -64,10 +64,10 @@
 					<execution>
 						<phase>install</phase>
 						<configuration>
-							<tasks>
+							<target>
 								<copy file="pom.xml"
 									tofile="${project.build.directory}/maven-soapui-plugin-${project.version}.pom" />
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>
